@@ -70,5 +70,23 @@
 情報系に行きたいけれど男の人ばかりだったらどうしようと悩んでいるそこのあなた！！
 香川大学に来て一緒に学ぶ仲間を見つけませんか？
 </p>
+import matplotlib.pyplot as plt
+
+# 男女の人数
+male_count = 51
+female_count = 21
+
+# ラベルとデータ
+labels = ['男性', '女性']
+sizes = [male_count, female_count]
+colors = ['skyblue', 'lightpink']
+
+# グラフ描画
+plt.figure(figsize=(6, 6))
+plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+plt.title('香川大学創造工学部情報コースにおける男女比（全72名）')
+plt.axis('equal')  # 円を真円に保つ
+plt.show()
+
 </body>
 </html>
