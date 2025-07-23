@@ -18,7 +18,7 @@
     </header>
 
     <main>
-        <section id="career">
+        <section id="career" class="fade-in">
             <h2>将来の職業</h2>
             <p>
                 香川大学創造工学部情報コースに入るメリットは、卒業後の職業の選択肢が多いということです。<br>
@@ -30,7 +30,7 @@
             </p>
         </section>
 
-        <section id="teachers">
+        <section id="teachers" class="fade-in">
             <h2>先生紹介</h2>
 
             <div class="teacher">
@@ -43,7 +43,7 @@
                 </p>
             </div>
 
-            <div class="teacher">
+            <div class="teacher fade-in">
                 <h3>八重樫 理人（やえがし りひと）先生</h3>
                 <p>専門分野：ソフトウェア工学、情報システム工学</p>
                 <p>ゼミ研究：観光ガイドブック「<a href="https://www.kagawa-u.ac.jp/kadapam/" target="_blank">カダパン</a>」、観光地支援「<a href="https://www.kagawa-u.ac.jp/files/7315/7923/6276/20200117_kadabingo.pdf" target="_blank">カダビンゴ</a>」</p>
@@ -53,7 +53,7 @@
                 </p>
             </div>
 
-            <div class="teacher">
+            <div class="teacher fade-in">
                 <h3>橋本 正樹（はしもと まさき）先生</h3>
                 <p>専門分野：情報セキュリティ</p>
                 <p>研究：偽サイトや偽情報の検出、システム活動の可視化</p>
@@ -64,7 +64,7 @@
             </div>
         </section>
 
-        <section id="stats">
+        <section id="stats" class="fade-in">
             <h2>情報コースの人数と女子比率</h2>
             <p>
                 2025年度より、<strong class="red">「情報システム・セキュリティコース」</strong>が
@@ -87,6 +87,28 @@
             <img src="スクリーンショット 2025-07-23 152826.png" alt="男女比グラフ" style="width:350px; display:block; margin: 20px auto;">
             </p>
         </section>
+
+        <script>
+         const faders = document.querySelectorAll('.fade-in');
+
+         const appearOptions = {
+         threshold: 0.1,
+         rootMargin: "0px 0px -50px 0px"
+         };
+
+         const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+         entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            appearOnScroll.unobserve(entry.target);
+         });
+         }, appearOptions);
+
+         faders.forEach(fader => {
+         appearOnScroll.observe(fader);
+         });
+       </script>
+
     </main>
 
     <footer>
