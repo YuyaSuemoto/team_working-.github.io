@@ -156,22 +156,6 @@ footer {
     transform: translateY(0);
 }
 
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #64b5f6;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-a.button:hover {
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
-}
-
 .wave-container {
     position: relative;
     height: 100px;
