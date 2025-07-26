@@ -9,11 +9,11 @@
         margin: 0 auto;
     }
     h2 {
-        width: 700px;
+        width: 900px;
         margin: 0 auto;
     }
     p {
-        width: 700px;
+        width: 900px;
         margin: 0 auto;
     }
     .teacher {
@@ -28,38 +28,67 @@
       color: #333;
     }
     .teacher {
-        width: 700px;
+        width: 900px;
         margin: 0 auto;
     }
     .description {
-        width: 700px;
+        width: 900px;
         margin: 0 auto;
     }
     h2 {
         background-color: #90bcfb;
     }
     p {
-        background-color: #f4f6f8;
+        background-color: #ffffff;
     }
     .teacher{
         background-color: #d9eafb;
     }
     .description{
-        background-color: #f4f6f8;
+        background-color: #ffffff;
     }
     .career-box {
-        background-color: #e5e9f2;         /* 淡いブルーグレー：クール＆スマート系に最適 */
-        border-radius: 16px;               /* 角丸の設定（数値を大きくすると丸みUP） */
+        background-color: #ffffff;
+        border-radius: 16px;
         padding: 20px;                     /* 内側余白で文字を囲む */
         margin: 30px auto;                 /* 上下の余白＋中央寄せ */
-        max-width: 700px;                  /* 横幅調整（スマートに見せる） */
+        max-width: 900px;                  /* 横幅調整（スマートに見せる） */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽い影で浮かせる感覚 */
     }
+    body{
+        background-color: #edeef1;
+    }
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #63d9e4; /* グリーン系 */
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    #scrollTopBtn:hover {
+      background-color: #64ccde;
+    }
+    h1{
+        background-color: #ffffff;
+    }
+
 
 </style>
 </head>
 <body>
+    <div style="height: 100px; background-color: white;">
+    </br>
     <h1>情報コースの魅力</h1>
+    </div>
 
     <div class="career-box">
     <h2>将来の職業</h2>
@@ -134,12 +163,18 @@
         <img src="スクリーンショット 2025-07-23 152826.png" alt="男女比グラフ" style="width:350px; display:block; margin: 20px auto;">
 
         </div>
-<script>
-    function toggleText(id) {
+        <button id="scrollTopBtn">↑</button>
+
+    <script>
+        function toggleText(id) {
       const element = document.getElementById(id);
       element.style.display = (element.style.display === "none") ? "block" : "none";
-    }
-  </script>
+        }
+        document.getElementById("scrollTopBtn").addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    </script>
 </body>
 </html>
 
