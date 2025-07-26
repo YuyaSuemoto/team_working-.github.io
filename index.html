@@ -84,7 +84,7 @@
     display: inline-block;
     padding: 10px 20px;
     background-color: #ffffff;
-    color: white;
+    color: rgb(14, 14, 14);
     text-decoration: none;
     border-radius: 5px;
     }
@@ -94,18 +94,83 @@
     html {
     scroll-behavior: smooth;
     }
+    .slider {
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+    }
+
+    .slides {
+      display: flex;
+      width: calc(600px * 3); /* 画像3枚分 */
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 600px;
+      height: 400px;
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
 
 
 </style>
 </head>
 <body>
-    <div style="height: 100px; background-color: white;">
+    <div style="height: 120px; background-color: white;">
     </br>
     <h1>情報コースの魅力</h1>
-    <a href="#section1" class="scroll-btn">将来の職業</a>
-
+    <a href="#section1" class="scroll-btn">▿将来の職業</a>
+    <a href="#section2" class="scroll-btn">▿先生紹介</a>
+    <a href="#section3" class="scroll-btn">▿香川大学の人数</a>
     </div>
-    <img src="3182a68538fd35fc970a6125bca16c69.jpg"  width="1500">
+    <div class="slider">
+    <div class="slides" id="slides">
+      <img src="3182a68538fd35fc970a6125bca16c69.jpg" alt="写真1">
+      <img src="kagawa-u_ead-img01_sp.jpg" alt="写真2">
+      <img src="access_img01_sp.jpg" alt="写真3">
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevSlide()">← 前へ</button>
+    <button onclick="nextSlide()">次へ →</button>
+  </div>
+
+  <script>
+    const slides = document.getElementById("slides");
+    const total = slides.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+      slides.style.transform = `translateX(-${600 * i}px)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      showSlide(index);
+    }
+
+    // 自動切り替えも併用
+    setInterval(nextSlide, 3000);
+  </script>
 
 
     <div class="career-box">
@@ -119,7 +184,7 @@
     </p></div></br>
   
     <div class="career-box">
-    <h2>先生紹介</h2>
+    <h2 id="section2">先生紹介</h2>
   
     <p>
         香川大学創造工学部情報コースの教員12名を紹介します。
@@ -151,7 +216,7 @@
     </p></div>
 
     <div class="career-box">
-  <h2>香川大学の人数</h2>
+  <h2 id="section3">香川大学の人数</h2>
    <p>
        2025年度より、<span style="font-weight: bold; color: red;" >「情報システム・セキュリティコース」</span>が
        <span style="font-weight: bold; color: red;" >「情報コース」</span>へ改称。<br>
