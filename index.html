@@ -80,6 +80,20 @@
     h1{
         background-color: #ffffff;
     }
+    .scroll-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    }
+    .scroll-btn:hover {
+    background-color: #ffffff;
+    }
+    html {
+    scroll-behavior: smooth;
+    }
 
 
 </style>
@@ -88,10 +102,14 @@
     <div style="height: 100px; background-color: white;">
     </br>
     <h1>情報コースの魅力</h1>
+    <a href="#section1" class="scroll-btn">将来の職業</a>
+
     </div>
+    <img src="3182a68538fd35fc970a6125bca16c69.jpg"  width="1500">
+
 
     <div class="career-box">
-    <h2>将来の職業</h2>
+    <h2 id="section1">将来の職業</h2>
     <p>香川大学創造工学部情報コースに入るメリットは、卒業後の職業の選択肢が多いということです。
         情報通信業はもちろん建設業や製造業、公務員など幅広く就職しています。
         国立の香川大学は近隣の県では有名で、かつ将来的に足りなくなることが予想されているITエンジニアの卵ということで就職では怖いものがありません！
